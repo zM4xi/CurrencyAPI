@@ -10,7 +10,7 @@ You have to write following to get started:
         CurrencyAPI currencyAPI = new CurrencyAPI();
     
     }
-    ```
+```
     
 It is as simple as it can go. Now you just use the methods provided by the API
 
@@ -21,7 +21,7 @@ For example like this:
         double balance = currencyAPI.getBalance(uuid);
 
         System.out.println(balance);
-        ```
+```
 This would output the balance stored in the database in combination with the uuid
 
 Or to add some balance:
@@ -29,5 +29,5 @@ Or to add some balance:
 ```java
         UUID uuid = null; //For presentation purpose null
         currencyAPI.depositBalance(uuid, 175.0);
-        ```
+```
         
