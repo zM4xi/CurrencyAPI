@@ -23,12 +23,6 @@ public class CurrencyAPI {
 
     }
 
-    /**
-     * Remove a {@link Number} from the balance bound to the given {@link UUID}
-     *
-     * @param uuid used to identify the linked balance
-     * @param amount
-     */
     public void withdrawBalance(UUID uuid, double amount) {
         try {
             getMySQL().update("UPDATE currency SET balance = balance - ? WHERE uuid = ?", amount, uuid.toString());
@@ -37,12 +31,6 @@ public class CurrencyAPI {
         }
     }
 
-    /**
-     * Add a {@link Number} to the balance bound to the given {@link UUID}
-     *
-     * @param uuid used to identify the linked balance
-     * @param amount
-     */
     public void depositBalance(UUID uuid, double amount) {
         try {
             getMySQL().update("UPDATE currency SET balance = balance + ? WHERE uuid = ?", amount, uuid.toString());
@@ -67,16 +55,6 @@ public class CurrencyAPI {
         return (double) getBalance(uuid) >= amount;
     }
 
-    public boolean isCovered(UUID uuid, byte amount) {
-        return (double) getBalance(uuid) >= amount;
-    }
-
-    /**
-     *  Get the current balance identified by a {@link UUID}
-     *
-     * @param uuid used to identify the linked balance
-     * @return a {@link Number} casted to the given {@link Class<? extends Number>} datatype
-     */
     public double getBalance(UUID uuid) {
         ResultSet rs = null;
         try {
@@ -90,14 +68,8 @@ public class CurrencyAPI {
         return 0;
     }
 
-    /**
-     * Get a {@link LinkedHashMap<UUID, Number>} with the top balances in the database
-     *
-     * @param limit to limitate the the size
-     * @return a {@link LinkedHashMap<UUID, Number>} with the top balances of the database
-     */
-    public LinkedHashMap<UUID, Number> getTop(int limit) {
-        LinkedHashMap<UUID, Number> map = new LinkedHashMap<>();
+    public LinkedHashMap<UUID, Double> getTop(int limit) {
+        LinkedHashMap<UUID, Double> map = new LinkedHashMap<>();
         try {
             ResultSet rs = getMySQL().query("SELECT DISTINCT * FROM currency ORDER BY balance DESC LIMIT " + limit);
             while (rs.next()) {
