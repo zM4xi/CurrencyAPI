@@ -31,3 +31,19 @@ Or to add some balance:
         currencyAPI.depositBalance(uuid, 175.0);
 ```
         
+```xml
+    <repositories>
+        <repository>
+            <id>currencyapi-repo</id>
+            <url>http://repo.zm4xi.de</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>de.zm4xi.currencyapi</groupId>
+            <artifactId>CurrencyAPI</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+```
