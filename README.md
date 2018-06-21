@@ -30,6 +30,8 @@ Or to add some balance:
         UUID uuid = null; //For presentation purpose null
         currencyAPI.depositBalance(uuid, 175.0);
 ```
+
+Maven Repository:
         
 ```xml
     <repositories>
