@@ -45,7 +45,7 @@ Maven Repository:
         <dependency>
             <groupId>de.zm4xi.currencyapi</groupId>
             <artifactId>CurrencyAPI</artifactId>
-            <version>1.1</version>
+            <version>1.2</version>
         </dependency>
     </dependencies>
 ```
