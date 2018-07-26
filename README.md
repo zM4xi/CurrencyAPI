@@ -7,7 +7,10 @@ You have to write following to get started:
 ```java
     @Override
     public void onEnable() {
-        CurrencyAPI currencyAPI = new CurrencyAPI();
+        //For Spigot Plugins
+        CurrencyAPI currencyAPI = SpigotCurrency.getInstance().getCurrencyAPI();
+        //For BungeeCord Plugins
+        CurrencyAPI currencyAPI = BungeeCurrency.getInstance().getCurrencyAPI();
     
     }
 ```
